@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titan Center Ferretero | Herramientas Profesionales</title>
+    <meta name="description" content="La mejor ferretería online del Perú. Taladros, herramientas eléctricas, manuales y más. Envíos a todo el país.">
+    <link rel="icon" href="imagenes/logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER FIJO -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="imagenes/logo.png" alt="Titan Center" class="logo">
+                <span>TITAN CENTER</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar productos...">
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount">0</span>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1><strong>TODO PARA</strong> TU OBRA</h1>
+            <p>Las mejores herramientas profesionales al mejor precio. Envíos a todo el Perú.</p>
+            <div class="hero-buttons">
+                <a href="#categorias" class="btn-primary">Ver Categorías</a>
+                <a href="#productos" class="btn-secondary">Ofertas</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="imagenes/banner-hero.jpg" alt="Herramientas profesionales">
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS DESTACADAS -->
+    <section id="categorias" class="categories">
+        <div class="container">
+            <h2><i class="fas fa-tools"></i> CATEGORÍAS POPULARES</h2>
+            <div class="categories-slider" id="catSlider">
+                <!-- Categorías se cargan con JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section id="productos" class="products-featured">
+        <div class="container">
+            <h2><i class="fas fa-fire"></i> PRODUCTOS DESTACADOS</h2>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Productos se cargan con JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRITO MODAL -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Mi Carrito</h3>
+                <span class="cart-close">&times;</span>
+            </div>
+            <div class="cart-body" id="cartBody"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: S/ <span id="cartTotal">0.00</span></strong>
+                </div>
+                <button class="btn-buy" onclick="checkout()">
+                    <i class="fas fa-credit-card"></i> Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/51991234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat</span>
+    </a>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="imagenes/logo.png" alt="Logo">
+                    <p>Titan Center Ferretero - Tu aliado en construcción</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li>Herramientas Eléctricas</li>
+                        <li>Herramientas Manuales</li>
+                        <li>Tornillería</li>
+                        <li>Medición</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +51 999 123 456</p>
+                    <p><i class="fas fa-envelope"></i> ventas@titancenter.pe</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lima - Perú</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Titan Center Ferretero. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
