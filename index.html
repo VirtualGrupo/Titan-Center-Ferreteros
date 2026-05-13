@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITAN CENTER — Herramientas y Soluciones Industriales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div>📞 Central: (01) 713-5000 &nbsp;|&nbsp; 🕐 Lun–Vie 8:00–18:00 | Sáb 8:00–13:00</div>
+    <div class="topbar-links">
+      <a href="#">Nuestras Tiendas</a>
+      <a href="#">Seguimiento de Pedido</a>
+      <a href="#">Contáctanos</a>
+    </div>
+  </div>
+</div>
+
+<header id="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🛠️</div>
+      TITAN<span>CENTER</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar herramientas, marcas, SKU…">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="header-actions">
+      <div class="header-action" id="cartIcon">
+        <div class="cart-badge">
+            <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+            <span class="badge" id="cartCount">0</span>
+        </div>
+        <span>Carrito</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-item active" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Todos los productos</div>
+    <div class="nav-item" onclick="abrirCategoria('Eléctricas')">Eléctricas</div>
+    <div class="nav-item" onclick="abrirCategoria('Manuales')">Manuales</div>
+    <div class="nav-item" onclick="abrirCategoria('Medición')">Medición</div>
+    <div class="nav-item" onclick="abrirCategoria('Seguridad')">Seguridad Industrial</div>
+    <div class="nav-item" onclick="abrirCategoria('Tornillería')">Tornillería</div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-main">
+    <span class="hero-tag">⚡ Oferta Especial — Mayo 2026</span>
+    <h1>Todo para<br><span>Tu Obra</span><br>y Taller</h1>
+    <p>Distribuidor autorizado de las principales marcas del sector ferretero e industrial. Más de 50,000 productos en stock.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver catálogo completo →</button>
+      <button class="btn-outline">Solicitar cotización</button>
+    </div>
+  </div>
+  <div class="hero-side">
+    <div class="side-banner b1" onclick="abrirCategoria('Eléctricas')">
+      <span class="sb-icon">🔌</span>
+      <h3>Taladros DeWalt</h3>
+      <p>Potencia inalámbrica para entornos exigentes</p>
+      <div class="sb-link">VER PRODUCTOS →</div>
+    </div>
+    <div class="side-banner b2" onclick="abrirCategoria('Seguridad')">
+      <span class="sb-icon">🦺</span>
+      <h3>Seguridad 3M</h3>
+      <p>Equipos de protección personal certificados</p>
+      <div class="sb-link" style="color:#F5A623">VER PRODUCTOS →</div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">50,000+</div>
+      <div class="stat-label">Productos en Stock</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">+15 años</div>
+      <div class="stat-label">En el Mercado</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Marcas Representadas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Envíos</div>
+      <div class="stat-label">A nivel nacional</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="categorias">
+  <div class="section-header">
+    <div class="section-title">Categorías Populares</div>
+  </div>
+  <div class="cats-grid" id="catSlider">
+    </div>
+</div>
+
+<div class="section" id="productos">
+  <div class="section-header">
+    <div class="section-title">Productos Destacados</div>
+  </div>
+  <div class="productos-grid" id="featuredProducts">
+    </div>
+</div>
+
+<div id="categoryModal" class="custom-modal">
+    <div class="modal-content category-content">
+        <div class="modal-header">
+            <h3 id="categoryModalTitle"><i class="fas fa-box-open"></i> Productos de la Categoría</h3>
+            <span class="modal-close" onclick="cerrarCategoria()">&times;</span>
+        </div>
+        <div class="modal-body" style="max-height: 75vh; overflow-y: auto; background: var(--negro); padding: 2rem;">
+            <div class="productos-grid" id="categoryProductsBody" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
+                </div>
+        </div>
+    </div>
+</div>
+
+<div id="productModal" class="custom-modal">
+    <div class="modal-content product-detail-content">
+        <span class="modal-close" onclick="cerrarDetalle()" style="position:absolute; top:15px; right:20px; z-index:10;">&times;</span>
+        <div class="product-detail-grid" id="productDetailBody">
+            </div>
+    </div>
+</div>
+
+<div id="cartModal" class="custom-modal">
+    <div class="modal-content cart-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-shopping-cart"></i> Mi Carrito</h3>
+            <span class="modal-close" onclick="cerrarCarrito()">&times;</span>
+        </div>
+        <div class="modal-body" id="cartBody"></div>
+        <div class="modal-footer">
+            <div class="cart-total">
+                <strong>Total: <span style="color:var(--rojo);">S/ <span id="cartTotal">0.00</span></span></strong>
+            </div>
+            <button class="btn-primary" style="width:100%; justify-content:center;" onclick="checkout()">
+                <i class="fab fa-whatsapp"></i> Finalizar por WhatsApp
+            </button>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/51991234567" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><div class="logo-icon" style="display:inline-block; width:24px;height:24px;font-size:14px;vertical-align:middle;">🛠️</div> TITAN<span>CENTER</span></div>
+      <div class="footer-desc">Tu aliado ferretero. Proveemos las mejores herramientas y soluciones para construcción e industria en todo el Perú.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Productos</h4>
+      <ul>
+        <li><a href="#" onclick="abrirCategoria('Eléctricas')">Eléctricas</a></li>
+        <li><a href="#" onclick="abrirCategoria('Manuales')">Manuales</a></li>
+        <li><a href="#" onclick="abrirCategoria('Medición')">Medición</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Soporte</h4>
+      <ul>
+        <li><a href="#">Contáctanos</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2026 TITAN CENTER E.I.R.L. — Todos los derechos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
