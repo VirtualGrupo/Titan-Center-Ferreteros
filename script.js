@@ -30,6 +30,7 @@ const productos = [
   {
     id: 1, marca: 'BOSCH', nombre: 'Taladro inalámbrico 20V GSB 18V-21', sku: 'SKU: 100123 | GSB18V-21',
     precio: 299.90, precioAntes: 360.00, icono: '⚡',
+     img: 'imagenes/taladro-bosch01.jpg',
     categoria: 'electricas', tag: 'oferta',
     desc: 'Taladro/atornillador a batería de 18V con mandril de 13mm, 2 velocidades y función martillo. Ideal para obras profesionales.',
     specs: [
@@ -44,6 +45,7 @@ const productos = [
   {
     id: 2, marca: 'MAKITA', nombre: 'Amoladora angular 4½" 720W GA4530', sku: 'SKU: 100456 | GA4530',
     precio: 189.90, precioAntes: null, icono: '🔥',
+     img: 'imagenes/amoladora-makita01.jpg',
     categoria: 'electricas', tag: 'destacado',
     desc: 'Amoladora angular profesional de 720W con disco de 4½". Diseño ergonómico y protección contra sobrecargas.',
     specs: [
@@ -57,6 +59,7 @@ const productos = [
   {
     id: 3, marca: 'DEWALT', nombre: 'Sierra circular 7¼" 1400W DWE575', sku: 'SKU: 100789 | DWE575',
     precio: 459.90, precioAntes: 520.00, icono: '⚙️',
+     img: 'imagenes/sierra-dewalt01.jpg',
     categoria: 'electricas', tag: 'oferta',
     desc: 'Sierra circular de 7¼" con potente motor de 1,400W. Corte limpio y preciso para madera, laminados y más.',
     specs: [
@@ -70,6 +73,7 @@ const productos = [
   {
     id: 4, marca: 'STANLEY', nombre: 'Cinta métrica FatMax 8m × 32mm', sku: 'SKU: 100234 | FMHT33866',
     precio: 49.90, precioAntes: null, icono: '📏',
+     img: 'imagenes/cinta-stanley01.jpg',
     categoria: 'medicion', tag: 'nuevo',
     desc: 'Cinta métrica profesional FatMax de 8m con hoja de 32mm, revestimiento Blade Armor para mayor durabilidad.',
     specs: [
@@ -83,6 +87,7 @@ const productos = [
   {
     id: 5, marca: 'HILTI', nombre: 'Taladradora rotativa TE 2 SDS-Plus', sku: 'SKU: 100567 | TE2-A',
     precio: 1290.00, precioAntes: null, icono: '🔨',
+     img: 'imagenes/taladora-hilti01.jpg',
     categoria: 'electricas', tag: 'destacado',
     desc: 'Taladradora rotativa ligera con sistema SDS-Plus. Ideal para concreto y mampostería. Calidad profesional Hilti.',
     specs: [
@@ -96,6 +101,7 @@ const productos = [
   {
     id: 6, marca: '3M', nombre: 'Respirador semifacial 6200 + filtros 6003', sku: 'SKU: 100890 | 6200-6003',
     precio: 89.90, precioAntes: 110.00, icono: '🦺',
+     img: 'imagenes/respirador-3m01.jpg',
     categoria: 'seguridad', tag: 'oferta',
     desc: 'Respirador de media cara con filtros 6003 para vapores orgánicos y gases ácidos. Certificado NIOSH N95.',
     specs: [
@@ -109,6 +115,7 @@ const productos = [
     id: 7, marca: 'TRUPER', nombre: 'Martillo demoledor 5Kg mango fibra', sku: 'SKU: 100345 | MAPO-5F',
     precio: 69.90, precioAntes: null, icono: '🔨',
     categoria: 'manuales', tag: 'destacado',
+     img: 'imagenes/demoledor-truper01.jpg',
     desc: 'Martillo de demolición de 5kg con cabeza forjada en acero C60 y mango de fibra de vidrio antivibración.',
     specs: [
       ['Peso cabeza', '5 kg'],
@@ -121,6 +128,7 @@ const productos = [
     id: 8, marca: 'WÜRTH', nombre: 'Tornillos autorroscantes Spax 4×40mm (200u)', sku: 'SKU: 100678 | SPAX4x40',
     precio: 29.90, precioAntes: null, icono: '🔩',
     categoria: 'tornillos', tag: 'nuevo',
+     img: 'imagenes/tornillo-roscante01.jpg',
     desc: 'Tornillos SPAX universales de alta calidad con punta perforante 4Cut. Rosca única para madera y materiales compuestos.',
     specs: [
       ['Medida', '4 × 40mm'],
