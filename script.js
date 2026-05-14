@@ -485,7 +485,13 @@ function abrirProducto(id) {
 
   const html = `
     <div class="modal-producto">
-      <div class="modal-prod-img">${p.icono}</div>
+      <div class="modal-prod-img">
+  ${p.img
+    ? `<img src="${p.img}" alt="${p.nombre}"
+            style="width:100%;height:100%;object-fit:contain;border-radius:8px"
+            onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\'font-size:80px\'>${p.icono}</span>')">`
+    : `<span style="font-size:80px">${p.img ? `<img src="${p.img}" alt="${p.nombre}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">` : p.icono}</span>`}
+</div>
       <div class="modal-prod-body">
         <div class="modal-prod-marca">${p.marca}</div>
         <div class="modal-prod-nombre">${p.nombre}</div>
