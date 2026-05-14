@@ -693,8 +693,12 @@ nav {
   font-family: 'Barlow', sans-serif;
   text-transform: uppercase;
 }
-.btn-carrito:hover { background: var(--naranja); transform: scale(1.05); }
-.btn-carrito.added { background: var(--verde); }
+.btn-carrito {
+  background: var(--azul);  
+}
+.btn-carrito:hover {
+  background: var(--naranja);
+}
 
 /* ══════════════════════
    INDUSTRIAS
