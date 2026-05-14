@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TITAN CENTER — Herramientas & Construcción</title>
-  <meta name="description" content="La mejor ferretería profesional del Perú. Taladros, herramientas eléctricas, manuales y más. Envíos a todo el país.">
+  <title>TITAN Soluciones Comerciales</title>
+  <meta name="description" content="Soluciones que Construyen Confianza. Herramientas profesionales, materiales y servicios para obras e industria en el Perú.">
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,7 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div>📞 Central: (01) 713-5000 &nbsp;|&nbsp; 🕐 Lun–Vie 8:00–18:00 | Sáb 8:00–13:00</div>
+    <div>📞 Central: (01) 713-5000 &nbsp;|&nbsp; 🕐 Lun–Vie 8:00–18:00 &nbsp;|&nbsp; Sáb 8:00–13:00</div>
     <div class="topbar-links">
       <a href="#tiendas">Nuestras Tiendas</a>
       <a href="#" onclick="abrirModal('seguimiento');return false;">Seguimiento de Pedido</a>
@@ -27,29 +27,43 @@
 <!-- HEADER -->
 <header id="header">
   <div class="header-inner">
+
+    <!-- LOGO con imagen real -->
     <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-      <div class="logo-icon">🔨</div>
-      TITAN<span>CENTER</span>
+      <img src="logo.png" alt="Titan Soluciones Comerciales"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex'">
+      <div id="logoFallback" style="display:none;align-items:center;gap:8px">
+        <div style="width:44px;height:44px;background:var(--azul);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px">🔨</div>
+        <div class="logo-text">
+          <div class="logo-title">TITAN<span>SC</span></div>
+          <div class="logo-sub">Soluciones Comerciales</div>
+        </div>
+      </div>
     </div>
 
+    <!-- BUSCADOR -->
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Buscar productos, marcas, SKU…" autocomplete="off">
       <button onclick="buscar()"><i class="fas fa-search"></i></button>
       <div class="search-dropdown" id="searchDropdown"></div>
     </div>
 
+    <!-- ACCIONES -->
     <div class="header-actions">
       <div class="header-action" onclick="abrirModal('cuenta')">
         <span class="icon"><i class="fas fa-user"></i></span>
         <span>Mi Cuenta</span>
       </div>
       <div class="header-action" onclick="abrirFavoritos()">
-        <span class="icon"><i class="fas fa-heart"></i></span>
+        <span class="icon cart-icon-wrap">
+          <i class="fas fa-heart"></i>
+          <span id="favCount" class="badge" style="display:none">0</span>
+        </span>
         <span>Favoritos</span>
-        <span id="favCount" class="badge" style="display:none">0</span>
       </div>
       <div class="header-action cart-trigger" onclick="abrirCarrito()">
-        <span class="icon cart-icon-wrap"><i class="fas fa-shopping-cart"></i>
+        <span class="icon cart-icon-wrap">
+          <i class="fas fa-shopping-cart"></i>
           <span id="cartBadge" class="badge">0</span>
         </span>
         <span>Carrito</span>
@@ -62,25 +76,32 @@
 <nav>
   <div class="nav-inner">
     <div class="nav-item active" onclick="filtrarNav(this,'todos')">Todos los productos</div>
-    <div class="nav-item" onclick="filtrarNav(this,'electricas')">Eléctricas</div>
-    <div class="nav-item" onclick="filtrarNav(this,'manuales')">Manuales</div>
-    <div class="nav-item" onclick="filtrarNav(this,'medicion')">Medición</div>
-    <div class="nav-item" onclick="filtrarNav(this,'tornillos')">Tornillería</div>
-    <div class="nav-item" onclick="filtrarNav(this,'pintura')">Pintura</div>
-    <div class="nav-item" onclick="filtrarNav(this,'seguridad')">Seguridad</div>
-    <div class="nav-item" onclick="abrirModal('servicios')">Servicios</div>
+    <div class="nav-item" onclick="filtrarNav(this,'electricas')">⚡ Eléctricas</div>
+    <div class="nav-item" onclick="filtrarNav(this,'manuales')">🔨 Manuales</div>
+    <div class="nav-item" onclick="filtrarNav(this,'medicion')">📏 Medición</div>
+    <div class="nav-item" onclick="filtrarNav(this,'tornillos')">🔩 Tornillería</div>
+    <div class="nav-item" onclick="filtrarNav(this,'pintura')">🎨 Pintura</div>
+    <div class="nav-item" onclick="filtrarNav(this,'seguridad')">🦺 Seguridad</div>
+    <div class="nav-item" onclick="abrirModal('servicios')">🔧 Servicios</div>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-main">
-    <span class="hero-tag">🔥 Oferta Especial — Mayo 2026</span>
-    <h1>Todo para<br><span>Tu Obra</span><br>Profesional</h1>
-    <p>Las mejores herramientas profesionales al mejor precio. Más de 15,000 productos en stock. Envíos a todo el Perú.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Ver catálogo completo →</button>
-      <button class="btn-outline" onclick="abrirModal('cotizacion')">Solicitar cotización</button>
+    <div class="hero-deco">🔨</div>
+    <div class="hero-content">
+      <span class="hero-tag">🔥 Ofertas Especiales — Mayo 2026</span>
+      <h1>Todo para<br><span>Tu Obra</span><br>Profesional</h1>
+      <p>Las mejores herramientas y soluciones comerciales al mejor precio. Más de 15,000 productos en stock. Envíos a todo el Perú.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">
+          Ver Catálogo Completo →
+        </button>
+        <button class="btn-outline" onclick="abrirModal('cotizacion')">
+          Solicitar Cotización
+        </button>
+      </div>
     </div>
   </div>
   <div class="hero-side">
@@ -94,7 +115,7 @@
       <span class="sb-icon">🦺</span>
       <h3>Seguridad Industrial</h3>
       <p>EPP certificados para obras y ambientes industriales exigentes</p>
-      <div class="sb-link" style="color:#F5A623">VER PRODUCTOS →</div>
+      <div class="sb-link">VER PRODUCTOS →</div>
     </div>
   </div>
 </div>
@@ -130,13 +151,13 @@
   <div class="cats-grid" id="catsGrid"></div>
 </div>
 
-<!-- PRODUCTOS DESTACADOS -->
+<!-- PRODUCTOS -->
 <div class="section" id="productos">
   <div class="section-header">
     <div class="section-title">Productos Destacados</div>
     <span class="ver-todo" onclick="filtrarNav(document.querySelector('.nav-item'),'todos')">Ver todos →</span>
   </div>
-  <div class="productos-tabs" id="productosTabs">
+  <div class="productos-tabs">
     <div class="prod-tab active" onclick="cambiarTab(this,'todos')">Todos</div>
     <div class="prod-tab" onclick="cambiarTab(this,'oferta')">Ofertas</div>
     <div class="prod-tab" onclick="cambiarTab(this,'nuevo')">Nuevos</div>
@@ -148,7 +169,7 @@
 <!-- SECTORES -->
 <div class="industrias">
   <div class="industrias-inner">
-    <div class="section-header" style="border-color:#3a3a3a">
+    <div class="section-header">
       <div class="section-title">Soluciones por Sector</div>
       <span class="ver-todo">Ver todas →</span>
     </div>
@@ -180,19 +201,19 @@
     <div class="servicio-card" onclick="abrirModal('srv-mantenimiento')">
       <span class="srv-icon">🔧</span>
       <div class="srv-title">Mantenimiento</div>
-      <div class="srv-desc">Mantenimiento preventivo y correctivo de herramientas y maquinaria industrial.</div>
+      <div class="srv-desc">Mantenimiento preventivo y correctivo de herramientas y maquinaria industrial. Técnicos certificados.</div>
       <div class="srv-link">Ver más →</div>
     </div>
     <div class="servicio-card" onclick="abrirModal('srv-proyectos')">
       <span class="srv-icon">📐</span>
       <div class="srv-title">Proyectos e Instalaciones</div>
-      <div class="srv-desc">Diseño, suministro y ejecución de proyectos de construcción e instalación.</div>
+      <div class="srv-desc">Diseño, suministro y ejecución de proyectos de construcción e instalación eléctrica y civil.</div>
       <div class="srv-link">Ver más →</div>
     </div>
     <div class="servicio-card" onclick="abrirModal('srv-asesoria')">
       <span class="srv-icon">📊</span>
       <div class="srv-title">Asesoría Técnica</div>
-      <div class="srv-desc">Especialistas te ayudan a elegir la herramienta correcta para cada trabajo.</div>
+      <div class="srv-desc">Especialistas te ayudan a elegir la herramienta correcta para cada trabajo, sin costo adicional.</div>
       <div class="srv-link">Ver más →</div>
     </div>
   </div>
@@ -202,7 +223,7 @@
 <div class="newsletter">
   <div class="newsletter-inner">
     <div>
-      <h2>📬 Recibe nuestras novedades</h2>
+      <h2>📬 Recibe Nuestras Novedades</h2>
       <p>Ofertas exclusivas, nuevos productos y soluciones para tu negocio.</p>
     </div>
     <div class="newsletter-form">
@@ -216,8 +237,9 @@
 <footer id="contacto">
   <div class="footer-inner">
     <div>
-      <div class="footer-logo">TITAN<span>CENTER</span></div>
-      <div class="footer-desc">Ferretería profesional líder en el Perú. Más de 20 años respaldando obras, industria y construcción con herramientas de primera calidad.</div>
+      <div class="footer-logo">TITAN<span>SC</span></div>
+      <div class="footer-sub">Soluciones Comerciales</div>
+      <div class="footer-desc">Ferretería y soluciones comerciales líderes en el Perú. Más de 20 años respaldando obras, industria y construcción con productos de primera calidad.</div>
       <div class="footer-social">
         <div class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></div>
         <div class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></div>
@@ -258,7 +280,7 @@
   </div>
   <div class="footer-bottom">
     <div class="footer-bottom-inner">
-      <span>© 2026 TITAN CENTER S.A.C. — Todos los derechos reservados. RUC: 20XXXXXXXXX</span>
+      <span>© 2026 TITAN Soluciones Comerciales S.A.C. — Todos los derechos reservados.</span>
       <div class="footer-pays">
         <span class="pay-badge">VISA</span>
         <span class="pay-badge">MC</span>
@@ -270,7 +292,7 @@
   </div>
 </footer>
 
-<!-- ═══ MODAL UNIVERSAL ═══ -->
+<!-- MODAL UNIVERSAL -->
 <div id="modalOverlay" class="modal-overlay" onclick="cerrarModalOverlay(event)">
   <div class="modal-box" id="modalBox">
     <button class="modal-close" onclick="cerrarModal()"><i class="fas fa-times"></i></button>
@@ -278,10 +300,10 @@
   </div>
 </div>
 
-<!-- ═══ MODAL CARRITO ═══ -->
+<!-- MODAL CARRITO -->
 <div id="cartModalOverlay" class="modal-overlay" onclick="cerrarCartOverlay(event)">
-  <div class="modal-box cart-box" id="cartBox">
-    <button class="modal-close" onclick="cerrarCarrito()"><i class="fas fa-times"></i></button>
+  <div class="modal-box cart-box">
+    <button class="modal-close" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);color:#fff" onclick="cerrarCarrito()"><i class="fas fa-times"></i></button>
     <div class="cart-header-bar">
       <h3><i class="fas fa-shopping-cart"></i> Mi Carrito</h3>
     </div>
@@ -292,17 +314,17 @@
         <strong>S/ <span id="cartTotal">0.00</span></strong>
       </div>
       <button class="btn-checkout" onclick="checkout()">
-        <i class="fab fa-whatsapp"></i> Finalizar por WhatsApp
+        <i class="fab fa-whatsapp"></i>&nbsp; Finalizar por WhatsApp
       </button>
       <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
     </div>
   </div>
 </div>
 
-<!-- ═══ MODAL FAVORITOS ═══ -->
+<!-- MODAL FAVORITOS -->
 <div id="favModalOverlay" class="modal-overlay" onclick="cerrarFavOverlay(event)">
-  <div class="modal-box cart-box" id="favBox">
-    <button class="modal-close" onclick="cerrarFavoritos()"><i class="fas fa-times"></i></button>
+  <div class="modal-box cart-box">
+    <button class="modal-close" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.2);color:#fff" onclick="cerrarFavoritos()"><i class="fas fa-times"></i></button>
     <div class="cart-header-bar">
       <h3><i class="fas fa-heart"></i> Mis Favoritos</h3>
     </div>
@@ -316,7 +338,7 @@
 <!-- WHATSAPP FLOTANTE -->
 <a href="https://wa.me/51991234567" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
   <i class="fab fa-whatsapp"></i>
-  <span>¿Ayuda?</span>
+  <span>¿Necesitas ayuda?</span>
 </a>
 
 <script src="script.js"></script>
