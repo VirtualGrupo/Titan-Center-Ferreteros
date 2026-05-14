@@ -222,7 +222,10 @@ function renderProductos(filtro) {
             title="${esFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}">
             <i class="fas fa-heart"></i>
           </button>
-          ${p.icono}
+          ${p.img
+  ? `<img src="${p.img}" alt="${p.nombre}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">`
+  : ''}
+<span style="${p.img ? 'display:none' : ''}">${p.icono}</span>
           <div class="prod-quickview">👁 Ver detalle</div>
         </div>
         <div class="prod-info">
@@ -271,7 +274,7 @@ function filtrarNav(el, cat) {
   if (primerTab) primerTab.classList.add('active');
 
   renderProductos();
-  document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /* ══════════════════════
