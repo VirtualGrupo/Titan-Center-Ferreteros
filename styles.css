@@ -96,7 +96,7 @@ header.scrolled { box-shadow: 0 4px 24px rgba(27,43,94,0.15); }
   flex-shrink: 0;
 }
 .logo img {
-  height: 52px;
+  height: 90px;
   width: auto;
   object-fit: contain;
 }
