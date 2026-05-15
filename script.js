@@ -274,6 +274,23 @@ function filtrarNav(el, cat) {
   if (primerTab) primerTab.classList.add('active');
 
   renderProductos();
+ // ← AGREGA ESTAS LÍNEAS:
+  const hero        = document.querySelector('.hero');
+  const statsBar    = document.querySelector('.stats-bar');
+  const catsSection = document.querySelector('.section');  // sección de categorías
+
+  if (cat === 'todos') {
+    // muestra todo cuando es "Todos los productos"
+    hero.style.display        = '';
+    statsBar.style.display    = '';
+    catsSection.style.display = '';
+  } else {
+    // oculta hero, stats y categorías cuando filtra por categoría
+    hero.style.display        = 'none';
+    statsBar.style.display    = 'none';
+    catsSection.style.display = 'none';
+  }
+}
   //document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
