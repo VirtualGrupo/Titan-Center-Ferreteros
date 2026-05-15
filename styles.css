@@ -83,7 +83,7 @@ header.scrolled { box-shadow: 0 4px 24px rgba(27,43,94,0.15); }
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 28px;
-  height: 76px;
+  height: 96px;
 }
 
 /* LOGO */
