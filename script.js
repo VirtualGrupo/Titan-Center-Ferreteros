@@ -290,9 +290,7 @@ function filtrarNav(el, cat) {
     statsBar.style.display    = 'none';
     catsSection.style.display = 'none';
   }
-}
-  //document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+
 
 /* ══════════════════════
    TABS
