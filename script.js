@@ -6,7 +6,7 @@
 /* ══════════════════════
    DATOS
 ══════════════════════ */
-const categorias = [
+const categorias = [f
   { id: 'electricas',  nombre: 'Herramientas Eléctricas', icono: '⚡' },
   { id: 'manuales',    nombre: 'Herramientas Manuales',   icono: '🔨' },
   { id: 'medicion',    nombre: 'Medición y Trazado',      icono: '📏' },
@@ -290,7 +290,7 @@ function filtrarNav(el, cat) {
     statsBar.style.display    = 'none';
     catsSection.style.display = 'none';
   }
-
+}
 
 /* ══════════════════════
    TABS
@@ -300,8 +300,8 @@ function cambiarTab(el, tab) {
   el.classList.add('active');
   tabActual = tab;
   renderProductos();
+  }
 }
-
 /* ══════════════════════
    FAVORITOS
 ══════════════════════ */
