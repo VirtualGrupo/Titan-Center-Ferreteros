@@ -205,7 +205,7 @@ function renderProductos(filtro) {
     return;
   }
 
-  grid.innerHTML = lista.map((p, i) => {
+    grid.innerHTML = lista.map((p, i) => {
     const esFav  = favoritos.includes(p.id);
     const enCart = carrito.find(c => c.id === p.id);
     const badgeHTML = p.tag === 'oferta'    ? '<span class="prod-badge">OFERTA</span>' :
@@ -213,6 +213,12 @@ function renderProductos(filtro) {
                       p.tag === 'destacado' ? '<span class="prod-badge dest">⭐ TOP</span>' : '';
     const antesHTML = p.precioAntes
       ? `<div class="precio-antes">S/ ${p.precioAntes.toFixed(2)}</div>` : '';
+    
+    // 🖼️ IMAGEN: Usa p.img si existe, si no muestra el icono
+    const imagenHTML = p.img 
+      ? `<img src="${p.img}" alt="${p.nombre}" onerror="this.outerHTML='<div class=\\'prod-icono\\'>${p.icono}</div>'">` 
+      : `<div class="prod-icono">${p.icono}</div>`;
+
     return `
       <div class="producto-card" style="animation-delay:${i * 0.05}s">
         <div class="prod-img" onclick="abrirProducto(${p.id})">
@@ -222,9 +228,10 @@ function renderProductos(filtro) {
             title="${esFav ? 'Quitar de favoritos' : 'Añadir a favoritos'}">
             <i class="fas fa-heart"></i>
           </button>
-          ${p.icono}
+          ${imagenHTML}
           <div class="prod-quickview">👁 Ver detalle</div>
         </div>
+
         <div class="prod-info">
           <div class="prod-marca">${p.marca}</div>
           <div class="prod-nombre">${p.nombre}</div>
@@ -479,6 +486,15 @@ function abrirProducto(id) {
     ? `<div class="modal-prod-antes">Antes: S/ ${p.precioAntes.toFixed(2)}</div>` : '';
   const specsHTML = p.specs
     ? `<div class="modal-prod-specs"><table>${p.specs.map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table></div>` : '';
+
+  // 🖼️ IMAGEN: Usa p.img si existe, si no muestra el icono
+  const imagenHTML = p.img 
+    ? `<img src="${p.img}" alt="${p.nombre}" onerror="this.outerHTML='<div class=\\'modal-prod-icono\\'>${p.icono}</div>'">` 
+    : `<div class="modal-prod-icono">${p.icono}</div>`;
+
+  const html = `
+    <div class="modal-producto">
+      <div class="modal-prod-img">${imagenHTML}</div>
 
   const html = `
     <div class="modal-producto">
