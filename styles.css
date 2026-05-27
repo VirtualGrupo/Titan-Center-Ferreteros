@@ -1297,3 +1297,47 @@ footer {
   .whatsapp-float    { border-radius: 50%; width: 56px; height: 56px; padding: 0; justify-content: center; }
   .topbar-links      { display: none; }
 }
+
+/* ══════════════════════
+   IMÁGENES DE PRODUCTOS
+══════════════════════ */
+
+/* Imagen en tarjetas */
+.prod-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.producto-card:hover .prod-img img {
+  transform: scale(1.06);
+}
+
+/* Icono fallback en tarjetas */
+.prod-icono {
+  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Imagen en modal */
+.modal-prod-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
+
+/* Icono fallback en modal */
+.modal-prod-icono {
+  font-size: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
